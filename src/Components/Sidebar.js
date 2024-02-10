@@ -43,11 +43,11 @@ function Sidebar() {
             sx={{
               "&:hover": {
                 "& .MuiListItemIcon-root": {
-                  color: "#fff",
+                  color: "#4287f5",
                 },
               },
             }}>
-            <ListItemButton>
+            <ListItemButton >
               <ListItemIcon>{item.icon}</ListItemIcon>
               <Typography
                 color="grey"
