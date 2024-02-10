@@ -22,8 +22,7 @@ import {
   NotificationsActiveOutlined,
   SearchOutlined,
 } from "@mui/icons-material";
-import MyChart from "./MyChart";
-import BasicScatter from "./LineChart";
+
 function createData(name, news, score, impact, probability) {
   return { name, news, score, impact, probability };
 }
