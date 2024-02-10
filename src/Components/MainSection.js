@@ -163,8 +163,13 @@ function MainSection() {
                     <TableCell>{row.news}</TableCell>
                     <TableCell>{row.score}</TableCell>
                     <TableCell>{row.impact}</TableCell>
-                    <TableCell sx={{ background: "'#e6ecf5'" }}>
-                      {row.probability}
+                    <TableCell>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        sx={{ backgroundColor: "#becfe6", color: "#355b8c" }}>
+                        {row.probability}
+                      </Button>
                     </TableCell>
                   </TableRow>
                 ))}
@@ -198,6 +203,9 @@ function MainSection() {
                           height: "15px",
                           fontSize: "6px",
                           borderRadius: "25px",
+                          "&:hover": {
+                            color: "white",
+                          },
                         }}>
                         Score 1
                       </Button>
