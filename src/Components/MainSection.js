@@ -4,6 +4,7 @@ import {
   Avatar,
   Badge,
   Box,
+  Button,
   IconButton,
   InputBase,
   Paper,
@@ -89,8 +90,11 @@ function MainSection() {
         {/* 2. Line Graph and Pie chart */}
         <Box></Box>
         {/* 3. Table section */}
-        <Box>
-        <TableContainer component={Paper}>
+        <Box display="flex">
+        <TableContainer component={Paper} sx={{border:"2px solid grey"}}>
+        <Typography variant="h6"  sx={{ mb: 2, mt: 2 }}>
+        Refined News
+      </Typography>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -119,6 +123,31 @@ function MainSection() {
         </TableBody>
       </Table>
     </TableContainer>
+    <TableContainer component={Paper} sx={{ border: "2px solid grey" }}>
+  <Table sx={{ minWidth: 650 }} aria-label="simple table">
+    <TableBody>
+      {[...Array(10)].map((_, index) => (
+        <TableRow
+          key={`row-${index}`}
+          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+        >
+          <TableCell component="th" scope="row">
+            Focus Topic {index + 1}
+          </TableCell>
+          
+          <TableCell align="right">
+            <Button variant="contained" color="primary">
+              Score 1
+            </Button>
+          </TableCell>
+        </TableRow>
+      ))}
+    </TableBody>
+  </Table>
+</TableContainer>;
+
+    
+    
         </Box>
       </Box>
     </Box>
