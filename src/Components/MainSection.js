@@ -129,7 +129,6 @@ function MainSection() {
         </Box>
         {/* 2. Line Graph and Pie chart */}
         <Box>{/* <BasicScatter/> */}</Box>
-        {/* <Box><MyChart/></Box> */}
         <Box sx={{display:"flex" , ml:"30px", height:"300px" , width:"100%"}}>
           <Charts />
           <Donut />
@@ -221,16 +220,20 @@ function MainSection() {
 
                     <TableCell>
                       <Typography
-                        variant="contained"
-                        color="primary"
                         sx={{
+                          display:"flex",
+                          background:"#355b8c",
+                          color:"#fff",
+                          alignItems:"center",
+                          justifyContent:"center",
                           height: "15px",
-                          width: "40px",
+                          width: "50px",
                           border: "1px solid grey",
                           fontSize: "6px",
                           borderRadius: "25px",
                           "&:hover": {
-                            color: "white",
+                            color: "black",
+                            background:"white"
                           },
                         }}>
                         Score 1
