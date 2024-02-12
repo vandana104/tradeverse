@@ -1,5 +1,5 @@
 import React from 'react';
-import { AxisModel, BubbleSeries, ChartComponent, Inject, SeriesCollectionDirective, SeriesDirective } from '@syncfusion/ej2-react-charts';
+import { BubbleSeries, ChartComponent, Inject, SeriesCollectionDirective, SeriesDirective } from '@syncfusion/ej2-react-charts';
 
 const Charts = () => {
   const primaryXAxis = {};

@@ -22,7 +22,6 @@ import {
   NotificationsActiveOutlined,
   SearchOutlined,
 } from "@mui/icons-material";
-import BubbleChart from "./Charts";
 import Charts from "./Charts";
 import Donut from "./Donut";
 
