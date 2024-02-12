@@ -22,6 +22,9 @@ import {
   NotificationsActiveOutlined,
   SearchOutlined,
 } from "@mui/icons-material";
+import BubbleChart from "./Charts";
+import Charts from "./Charts";
+import Donut from "./Donut";
 
 function createData(name, news, score, impact, probability) {
   return { name, news, score, impact, probability };
@@ -95,12 +98,15 @@ function MainSection() {
                   placeholder="Search your question here or ask TiiA"
                 />
                 <IconButton sx={{ p: "10px" }} aria-label="mic">
-                  <MicOutlined />
+                  <MicOutlined sx={{ color: "#4287f5" }} />
                 </IconButton>
               </Paper>
             </Box>
 
-            <Typography pt="20px">Current Licence: USD/CAD AUD/USD</Typography>
+            <Typography pt="20px">
+              <span style={{ color: "#4287f5" }}>Current Licence </span>:
+              USD/CAD AUD/USD
+            </Typography>
           </Box>
           <Box>
             <Box
@@ -114,7 +120,7 @@ function MainSection() {
                 alt="Cindy Baker"
                 src="https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659652_1280.png"
               />
-              <select>
+              <select style={{ border: "none", outline: "none" }}>
                 <option>vandana</option>
               </select>
             </Box>
@@ -125,11 +131,16 @@ function MainSection() {
         {/* 2. Line Graph and Pie chart */}
         <Box>{/* <BasicScatter/> */}</Box>
         {/* <Box><MyChart/></Box> */}
+        <Box sx={{display:"flex" , ml:"30px", height:"300px" , width:"100%"}}>
+          <Charts />
+          <Donut />
+        </Box>
         {/* 3. Table section */}
         <Box
           display="flex"
+          pt="40px"
           // width="100%"
-          height="400px"
+          height="auto"
           justifyContent="space-evenly"
           // gap="5rem"
         >
@@ -156,17 +167,29 @@ function MainSection() {
                   <TableRow
                     key={row.name}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      sx={{ fontSize: "12px" }}
+                      component="th"
+                      scope="row">
                       {row.name}
                     </TableCell>
-                    <TableCell>{row.news}</TableCell>
-                    <TableCell>{row.score}</TableCell>
-                    <TableCell>{row.impact}</TableCell>
+                    <TableCell sx={{ fontSize: "12px" }}>{row.news}</TableCell>
+                    <TableCell sx={{ fontSize: "12px" }}>{row.score}</TableCell>
+                    <TableCell sx={{ fontSize: "12px" }}>
+                      {row.impact}
+                    </TableCell>
                     <TableCell>
                       <Button
                         variant="contained"
                         color="primary"
-                        sx={{ backgroundColor: "#becfe6", color: "#355b8c" }}>
+                        sx={{
+                          backgroundColor: "#becfe6",
+                          color: "#355b8c",
+                          fontSize: "10px",
+                          "&:hover": {
+                            color: "#fff",
+                          },
+                        }}>
                         {row.probability}
                       </Button>
                     </TableCell>
@@ -190,16 +213,21 @@ function MainSection() {
                   <TableRow
                     key={`row-${index}`}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      sx={{ fontSize: "12px" }}>
                       Focus Topic {index + 1}
                     </TableCell>
 
                     <TableCell>
-                      <Button
+                      <Typography
                         variant="contained"
                         color="primary"
                         sx={{
                           height: "15px",
+                          width: "40px",
+                          border: "1px solid grey",
                           fontSize: "6px",
                           borderRadius: "25px",
                           "&:hover": {
@@ -207,12 +235,21 @@ function MainSection() {
                           },
                         }}>
                         Score 1
-                      </Button>
+                      </Typography>
                     </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
+            <a
+              style={{
+                marginLeft: "1rem",
+                textDecoration: "none",
+                color: "#4287f5",
+              }}
+              href="/">
+              See All{" "}
+            </a>
           </TableContainer>
         </Box>
       </Box>

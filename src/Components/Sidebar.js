@@ -32,7 +32,7 @@ function Sidebar() {
       <Typography variant="h6" padding="50px 0 30px 10px">
         TRADEVERSE
       </Typography>
-      <Typography variant="caption" color="grey">
+      <Typography variant="caption" color="grey" ml="10px">
         MAIN MENU
       </Typography>
       <List>
@@ -47,7 +47,7 @@ function Sidebar() {
                 },
               },
             }}>
-            <ListItemButton >
+            <ListItemButton>
               <ListItemIcon>{item.icon}</ListItemIcon>
               <Typography
                 color="grey"
@@ -55,10 +55,7 @@ function Sidebar() {
                 sx={{
                   fontSize: "0.8rem",
                   "&:hover": {
-                    color: "black", // Text color on hover
-                    "& .MuiListItemIcon-root": {
-                      color: "#fff",
-                    },
+                    color: "black",
                   },
                 }}>
                 {item.text}
